@@ -1,0 +1,14 @@
+config/dev.yml
+config/private.yml
+releases
+dev_releases
+.blobs
+blobs
+.dev_builds
+.idea
+.DS_Store
+.final_builds
+*.swp
+*~
+*#
+#*

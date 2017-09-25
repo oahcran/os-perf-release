@@ -1,0 +1,19 @@
+---
+releases:
+- name: os-perf
+  version: 0+dev.1
+
+addons:
+- name: os-perf
+  jobs:
+  - name: kernel_network
+    release: os-perf
+  properties:
+    kernel_network:
+      net:
+        core:
+          rmem_max: 2096304
+          wmem_max: 2096304
+  include:
+    deployments:
+    - uaa

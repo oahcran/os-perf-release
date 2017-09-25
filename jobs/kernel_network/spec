@@ -1,0 +1,15 @@
+---
+name: kernel_network
+templates:
+  pre-start.sh.erb: bin/pre-start
+
+packages:
+
+properties:
+  kernel_network.net.core.rmem_max:
+    description: This sets the max OS receive buffer size for all types of connections.
+    default: 2096304
+
+  kernel_network.net.core.wmem_max:
+    description: This sets the max OS send buffer size for all types of connections.
+    default: 2096304

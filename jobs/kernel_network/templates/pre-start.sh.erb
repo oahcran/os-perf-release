@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -ex
+
+sysctl -w net.core.rmem_max=<%= p('kernel_network.net.core.rmem_max') %>
+sysctl -w net.core.wmem_max=<%= p('kernel_network.net.core.wmem_max') %>
+
+# In case VM is restarted
+cat > /etc/sysctl.d/80-bosh-kernel-network.conf <<EOF
+net.core.rmem_max=<%= p('kernel_network.net.core.rmem_max') %>
+net.core.wmem_max=<%= p('kernel_network.net.core.wmem_max') %>
+EOF
